@@ -9,17 +9,13 @@ def binary_search(array, target, start, end):
             start = mid +1
     return None
 
-n = int(input())
+
+n, target = list(map(int, input().split()))
 array = list(map(int, input().split()))
 
-array.sort()
+result = binary_search(array, target, 0, n - 1)
 
-m = int(input())
-array_2 = list(map(int, input().split()))
-
-for i in array_2:
-    x = binary_search(array, i, 0, n -1)
-    if x != None:
-        print('yes', end=' ')
-    else:
-        print('no', end=' ')
+if result == None:
+    print('원소가 존재하지 않습니다.')
+else:
+    print(result + 1)
